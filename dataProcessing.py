@@ -127,49 +127,9 @@ finaldf
 
 # finaldf.set_index("公司代號", inplace=True)
 
-# ### 🔹 方法1：雷達圖（Radar Chart）
-# def plot_radar_chart(df):
-#     categories = df.columns
-#     num_vars = len(categories)
-    
-#     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
-#     angles += angles[:1]  # 關閉雷達圖環形
-    
-#     fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
-    
-#     for idx, row in df.iterrows():
-#         values = row.tolist()
-#         values += values[:1]
-#         ax.plot(angles, values, label=idx, linewidth=2)
-#         ax.fill(angles, values, alpha=0.25)
-    
-#     ax.set_xticks(angles[:-1])
-#     ax.set_xticklabels(categories, fontsize=12)
-#     ax.legend(loc='upper right', bbox_to_anchor=(1.2, 1.1))
-#     ax.set_title("股票數據雷達圖", fontsize=14)
-    
-#     plt.show()
+# ### 法1：雷達圖（Radar Chart）
 
-# ### 🔹 方法2：標準化後的群組柱狀圖
-# def plot_standardized_grouped_bar_chart(df):
-#     scaler = MinMaxScaler()
-#     df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns, index=df.index)
-    
-#     df_scaled.plot(kind="bar", figsize=(10, 6), colormap="viridis", edgecolor="black")
-#     plt.title("標準化後的股票數據群組柱狀圖")
-#     plt.ylabel("標準化值（0~1）")
-#     plt.xticks(rotation=0)
-#     plt.legend(title="指標")
-#     plt.grid(axis="y", linestyle="--", alpha=0.7)
-    
-#     plt.show()
-
-# # 執行視覺化
-# # plot_radar_chart(finaldf)
-# plot_standardized_grouped_bar_chart(finaldf)
-
-
-# In[ ]:
+# ### 法2：標準化後的群組柱狀圖
 
 
 
